@@ -13,13 +13,6 @@ class ExerciseSeeder extends Seeder
      */
     public function run()
     {
-        Exercise::create([
-
-        ]);
-
-        Exercise::create([
-
-        ]);
 
         $this->call(ExerciseSeeder::class);
 

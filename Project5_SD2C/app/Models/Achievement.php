@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class Achievement extends Model
 {
@@ -11,8 +13,15 @@ class Achievement extends Model
 
     protected $fillable = ["name", "date", "starttime", "endtime", "amount", "user_id"];
 
-    public function User()
+    public function Users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'achievements_users')
+            ->using(AchievementUser::class);
     }
+
+    public function Exercise()
+    {
+        return $this->belongsTo((Exercise::class));
+    }
+
 }

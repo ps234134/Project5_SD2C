@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('achievements_users', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable(false);
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('achievements_id');
+            $table->unsignedBigInteger('achievement_id');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('achievements_id')->references('id')->on('achievements')->onDelete('cascade');
+            $table->foreign('achievement_id')->references('id')->on('achievements')->onDelete('cascade');
             $table->timestamps();
         });
     }
