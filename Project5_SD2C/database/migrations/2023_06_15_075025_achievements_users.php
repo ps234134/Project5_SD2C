@@ -11,18 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('achievements', function (Blueprint $table) {
+        Schema::create('achievements_users', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
-            $table->date('date')->nullable(false);
-            $table->string('starttime')->nullable(false);
-            $table->string('endtime')->nullable(false);
-            $table->string('amount')->nullable(false);
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('achievements_id');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('achievements_id')->references('id')->on('achievements')->onDelete('cascade');
             $table->timestamps();
-
         });
     }
 
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('achievements');
+        //
     }
 };
