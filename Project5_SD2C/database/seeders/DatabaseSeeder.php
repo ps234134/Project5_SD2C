@@ -17,12 +17,6 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ExerciseSeeder::class,
             AchievementSeeder::class,
-        ])
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        ]);
     }
 }
