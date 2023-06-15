@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('achievements', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable(false);
+            $table->date('date')->nullable(false);
+            $table->string('starttime')->nullable(false);
+            $table->string('endtime')->nullable(false);
+            $table->string('amount')->nullable(false);
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+
         });
     }
 
