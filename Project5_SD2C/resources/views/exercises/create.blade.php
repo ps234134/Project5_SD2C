@@ -6,43 +6,75 @@
             <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
 
                 <div class="mb-4">
-                    <h1 class="font-serif text-3xl font-bold">Create User</h1>
+                    <h1 class="font-serif text-3xl font-bold">Create Exercise</h1>
                 </div>
 
                 <div class="w-full px-6 py-4 bg-white rounded shadow-md ring-1 ring-gray-900/10">
-                    <form method="POST" action="{{ route('post.store') }}">
+                    <form method="POST" action="{{ route('exercise.store') }}">
                         @csrf
                         <!-- Title -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700" for="title">
-                                Pokemon
+                            <label class="block text-sm font-medium text-gray-700" for="name">
+                                Name
                             </label>
 
                             <input
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                type="text" name="pokemon" placeholder="100">
-                            @error('title')
+                                type="text" name="name" placeholder="100">
+                            @error('name')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
                                 </span>
                             @enderror
                         </div>
 
-                        <!-- Description -->
-                        <div class="mt-4">
-                            <label class="block text-sm font-medium text-gray-700" for="description">
-                                Type
+                          <!-- Description eng-->
+                          <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700" for="description_eng">
+                                Description_eng
                             </label>
+
                             <input
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                type="text" name="type" placeholder="100">
-                            @error('title')
+                                type="text" name="description_eng" placeholder="1000">
+                            @error('description_eng')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
                                 </span>
                             @enderror
                         </div>
 
+                         <!-- Description nl-->
+                         <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700" for="description_nld">
+                                Description_nl
+                            </label>
+
+                            <input
+                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                type="text" name="description_nld" placeholder="1000">
+                            @error('description_nld')
+                                <span class="text-red-600 text-sm">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
+
+                         <!-- image-->
+                         <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700" for="img">
+                               Image
+                            </label>
+
+                            <input
+                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                type="url" name="img" placeholder="1000">
+                            @error('img')
+                                <span class="text-red-600 text-sm">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
 
                         <div class="flex items-center justify-start mt-4">
                             <button type="submit"

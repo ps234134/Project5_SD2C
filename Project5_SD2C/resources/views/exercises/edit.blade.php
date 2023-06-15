@@ -6,7 +6,7 @@
             <div class="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
 
                 <div class="mb-4">
-                    <h1 class="font-serif text-3xl font-bold">Update User</h1>
+                    <h1 class="font-serif text-3xl font-bold">Update Exercise</h1>
                 </div>
 
                 @if ($errors->any())
@@ -20,35 +20,51 @@
                 @endif
 
                 <div class="w-full px-6 py-4 bg-white rounded shadow-md ring-1 ring-gray-900/10">
-                    <form method="POST" action="{{ route('post.update', $pokemon->id) }}">
+                    <form method="POST" action="{{ route('exercise.update', $exercise->id) }}">
                         @method('PATCH')
                         @csrf
                         <div>
-                            <label class="block text-sm font-medium text-gray-700" for="pokemon">
-                                Pokemon
+                            <label class="block text-sm font-medium text-gray-700" for="name">
+                                Name
                             </label>
 
                             <input
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                type="text" name="pokemon" placeholder="100"
-                                value="{{ old('pokemon', $pokemon->pokemon) }}">
-                            @error('pokemon')
+                                type="text" name="name" placeholder="100"
+                                value="{{ old('exercise', $exercise->name) }}">
+                            @error('name')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
                                 </span>
                             @enderror
                         </div>
 
-                        <!-- Description -->
+                        <!-- Description eng-->
                         <div class="mt-4">
-                            <label class="block text-sm font-medium text-gray-700" for="type">
-                                Type
+                            <label class="block text-sm font-medium text-gray-700" for="description_eng">
+                                Description_eng
                             </label>
 
                             <input
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                type="text" name="type" placeholder="100" value="{{ old('pokemon', $pokemon->type) }}">
-                            @error('type')
+                                type="text" name="description_eng" placeholder="1000" value="{{ old('exercise', $exercise->description_eng) }}">
+                            @error('description_eng')
+                                <span class="text-red-600 text-sm">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
+
+                         <!-- Description nl-->
+                         <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700" for="description_nld">
+                                Description_nl
+                            </label>
+
+                            <input
+                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                type="text" name="description_nld" placeholder="1000" value="{{ old('exercise', $exercise->description_nld) }}">
+                            @error('description_nld')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
                                 </span>

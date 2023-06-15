@@ -7,7 +7,7 @@
             <h1 class="font-serif text-3xl font-bold underline decoration-gray-400"> Exercises list </h1>
 
             <div class="flex justify-end">
-                <a href="#"
+                <a href="{{ route('exercise.create')}}"
                     class="px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600">Create Exercise</a>
             </div>
         </div>
@@ -40,34 +40,38 @@
                         </thead>
 
                         <tbody class="bg-white">
-                            {{-- @foreach ($pokemon as $pokemons) --}}
+                            @foreach ($exercise as $exercises)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                         <div class="flex items-center">
-                                            {{-- {{ $pokemons->id }} --}}
+                                            {{ $exercises->id }}
                                         </div>
 
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                         <div class="text-sm leading-5 text-gray-900">
-                                            {{-- {{ $pokemons->pokemon }} --}}
+                                            {{ $exercises->name }}
                                         </div>
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        {{-- {{ $pokemons->type }} --}}
+                                        {{ $exercises->description_eng }}
+                                    </td>
+
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        {{ $exercises->description_nld }}
                                     </td>
 
                                     <td
                                         class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                                        {{-- <span> {{ $pokemons->created_at }}</span> --}}
+                                        <span> {{ $exercises->created_at }}</span>
                                     </td>
 
                                     <td
                                         class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
                                         <a class="text-indigo-600 hover:text-indigo-900"
-                                            href="#">
+                                            href="{{route('exercise.edit', $exercises->id)}}">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -77,7 +81,7 @@
 
                                     </td>
                                     <td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">
-                                        <form action="#" method="POST"
+                                        <form action="{{route('exercise.destroy',$exercises->id )}}" method="POST"
                                             onsubmit="return confirm('{{ trans('are You Sure ? ') }}');">
 
                                             <input type="hidden" name="_method" value="DELETE">
@@ -93,7 +97,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                            {{-- @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
