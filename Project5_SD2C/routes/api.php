@@ -14,10 +14,6 @@ Route::get('exercises/{language}/{id}', [ApiExerciseController::class, 'show']);
 Route::get('exercises/{language}/search/{name}', [ApiExerciseController::class, 'searchExercise']);
 
 
-
-
-
-
 // validates and creates achievements
 Route::post('achievements', [ApiAchievementController::class, 'store']);
 
