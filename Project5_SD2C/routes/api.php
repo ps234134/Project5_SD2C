@@ -11,6 +11,10 @@ use App\Http\Controllers\api_controllers\ApiUserController;
 //{language} is a parameter that will be passed trough the controller it can only be "Dutch" or "English"
 Route::get('exercises/{language}', [ApiExerciseController::class, 'index']);
 Route::get('exercises/{language}/{id}', [ApiExerciseController::class, 'show']);
+Route::get('exercises/{language}/search/{name}', [ApiExerciseController::class, 'searchExercise']);
+
+
+
 
 
 
