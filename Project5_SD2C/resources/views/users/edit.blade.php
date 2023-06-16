@@ -20,41 +20,40 @@
                 @endif
 
                 <div class="w-full px-6 py-4 bg-white rounded shadow-md ring-1 ring-gray-900/10">
-                    <form method="POST" action="{{ route('post.update', $pokemon->id) }}">
+                    <form method="POST" action="{{ route('user.update', $user->id) }}">
                         @method('PATCH')
                         @csrf
                         <div>
-                            <label class="block text-sm font-medium text-gray-700" for="pokemon">
-                                Pokemon
+                            <label class="block text-sm font-medium text-gray-700" for="user">
+                                User
                             </label>
 
                             <input
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                type="text" name="pokemon" placeholder="100"
-                                value="{{ old('pokemon', $pokemon->pokemon) }}">
-                            @error('pokemon')
+                                type="text" name="user" placeholder="100"
+                                value="{{ old('user', $user->user) }}">
+                            @error('user')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
                                 </span>
                             @enderror
                         </div>
 
-                        <!-- Description -->
+                        <!-- Email -->
                         <div class="mt-4">
-                            <label class="block text-sm font-medium text-gray-700" for="type">
-                                Type
+                            <label class="block text-sm font-medium text-gray-700" for="email">
+                                Email
                             </label>
 
                             <input
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                type="text" name="type" placeholder="100" value="{{ old('pokemon', $pokemon->type) }}">
-                            @error('type')
+                                type="text" name="email" placeholder="1000" value="{{ old('email', $email->email) }}">
+                            @error('email')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
                                 </span>
                             @enderror
                         </div>
-
 
                         <div class="flex items-center justify-start mt-4">
                             <button type="submit"

@@ -10,33 +10,34 @@
                 </div>
 
                 <div class="w-full px-6 py-4 bg-white rounded shadow-md ring-1 ring-gray-900/10">
-                    <form method="POST" action="{{ route('post.store') }}">
+                    <form method="POST" action="{{ route('user.store') }}">
                         @csrf
                         <!-- Title -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700" for="title">
-                                Pokemon
+                            <label class="block text-sm font-medium text-gray-700" for="user">
+                                User
                             </label>
 
                             <input
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                type="text" name="pokemon" placeholder="100">
-                            @error('title')
+                                type="text" name="name" placeholder="100">
+                            @error('name')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
                                 </span>
                             @enderror
                         </div>
 
-                        <!-- Description -->
-                        <div class="mt-4">
-                            <label class="block text-sm font-medium text-gray-700" for="description">
-                                Type
+                          <!-- Email -->
+                          <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700" for="email">
+                                Email
                             </label>
+
                             <input
                                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                type="text" name="type" placeholder="100">
-                            @error('title')
+                                type="text" name="description_eng" placeholder="1000">
+                            @error('email')
                                 <span class="text-red-600 text-sm">
                                     {{ $message }}
                                 </span>

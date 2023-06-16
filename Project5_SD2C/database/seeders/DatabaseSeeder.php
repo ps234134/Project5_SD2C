@@ -29,31 +29,31 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Push-up',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_MpV3k459xyGP9XoyOwT7G-vX3xT_Y8KLew&usqp=CAU',
+                'img' => '',
                 'description_eng' => "A push-up is a classic exercise that primarily targets the muscles in your chest, shoulders, and arms. Here is a simple and concise explanation of how to perform a push-up:\n\nStart by positioning yourself face down on the floor, with your hands slightly wider than shoulder-width apart.\nStraighten your arms and extend your legs, keeping your toes on the ground.\nEngage your core muscles and maintain a straight line from your head to your heels.\nLower your body by bending your arms, allowing your chest to approach the ground.\nStop when your chest is just above the ground, or as low as you can comfortably go.\nPush through your hands to straighten your arms and raise your body back to the starting position.\nRepeat the movement for the desired number of repetitions.",
                 'description_nld' => "Een push-up is een klassieke oefening die voornamelijk gericht is op de spieren in je borst, schouders en armen. Hier is een korte en heldere uitleg over hoe je een push-up uitvoert:\n\nBegin door met je gezicht naar beneden op de grond te liggen, met je handen iets breder dan schouderbreedte uit elkaar.\nStrek je armen en strek je benen, waarbij je je tenen op de grond houdt.\nSpan je buikspieren aan en behoud een rechte lijn van je hoofd tot je hielen.\nBuig je armen en laat je lichaam zakken, zodat je borst naar de grond toe beweegt.\nStop wanneer je borst net boven de grond is, of zo laag als je comfortabel kunt gaan.\nDuw door je handen om je armen te strekken en je lichaam terug te brengen naar de startpositie.\nHerhaal de beweging voor het gewenste aantal herhalingen."
             ],
             [
                 'name' => 'Dip',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHPAjy36or3gO6q4d6MgVmncA-gpy8z0P7A&usqp=CAU',
+                'img' => '',
                 'description_eng' => "A dip is an exercise that targets your triceps, chest, and shoulders. Here is a simple and concise explanation of how to perform a dip:\n\nFind parallel bars or use a dip station. Place your hands on the bars with your palms facing down and grip firmly.\nLift yourself up, straightening your arms, so that your feet are off the ground and your arms are supporting your body weight.\nKeep your torso upright and engage your core muscles.\nLower your body by bending your elbows and allowing your chest to move towards the bars.\nContinue descending until your upper arms are parallel to the ground or as low as you comfortably can.\nPush through your hands to straighten your arms and lift your body back up to the starting position.\nRepeat the movement for the desired number of repetitions.\n",
                 'description_nld' => "Een dip is een oefening die gericht is op je triceps, borst en schouders. Hier is een eenvoudige en beknopte uitleg over hoe je een dip kunt uitvoeren:\n\nZoek parallelle stangen of gebruik een dipsysteem. Plaats je handen op de stangen met je handpalmen naar beneden gericht en grijp stevig vast.\nTil jezelf op, strek je armen recht, zodat je voeten van de grond komen en je armen je lichaamsgewicht ondersteunen.\nHoud je bovenlichaam rechtop en span je buikspieren aan.\nVerlaag je lichaam door je ellebogen te buigen en je borst naar de stangen te laten bewegen.\nBlijf dalen totdat je bovenarmen parallel zijn aan de grond of zo laag als comfortabel mogelijk is.\nDuw door je handen om je armen te strekken en til je lichaam weer op naar de startpositie.\nHerhaal de beweging voor het gewenste aantal herhalingen."
             ],
             [
                 'name' => 'Plank',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHPAjy36or3gO6q4d6MgVmncA-gpy8z0P7A&usqp=CAU',
+                'img' => '',
                 'description_eng' => "The plank is a core-strengthening exercise that also engages your shoulders, arms, and glutes. Here is a simple and concise explanation of how to perform a plank:\n\nStart by positioning yourself face down on the floor.\nPlace your forearms on the ground, aligning your elbows directly under your shoulders.\nExtend your legs straight back, resting on your toes.\nEngage your core muscles by drawing your belly button towards your spine.\nKeep your body in a straight line from your head to your heels, avoiding sagging or lifting your hips.\nHold this position for a specific duration, focusing on maintaining proper form and breathing steadily.\nTo finish, gently lower your knees to the ground and rest.\n",
                 'description_nld' => "De plank is een oefening die je kernspieren versterkt en ook je schouders, armen en bilspieren activeert. Hier is een korte en heldere uitleg over hoe je een plank uitvoert:\n\nBegin door met je gezicht naar beneden op de grond te liggen.\nPlaats je onderarmen op de grond, waarbij je ellebogen recht onder je schouders staan.\nStrek je benen recht naar achteren, rustend op je tenen.\nSpan je buikspieren aan door je navel naar je ruggengraat te trekken.\nHoud je lichaam in een rechte lijn van je hoofd tot je hielen, vermijd doorzakken of het optillen van je heupen.\nHoud deze positie gedurende een bepaalde periode vast, let op het behouden van de juiste houding en adem regelmatig.\nOm te eindigen, laat je knieën voorzichtig op de grond zakken en rust uit.\n"
             ],
             [
                 'name' => 'Horsekick',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHPAjy36or3gO6q4d6MgVmncA-gpy8z0P7A&usqp=CAU',
+                'img' => '',
                 'description_eng' => "The horse kick is an exercise that targets your glutes, hamstrings, and core muscles. Here is a simple and concise explanation of how to perform a horse kick:\n\nStart by getting down on all fours on an exercise mat or a soft surface.\nAlign your hands directly under your shoulders and your knees under your hips.\nExtend one leg straight back, keeping it parallel to the ground.\nEngage your glutes and core muscles for stability.\nFrom this position, kick the extended leg out to the side, keeping it straight and in line with your body.\nReturn the leg to the starting position, keeping it off the ground.\nRepeat the kick for the desired number of repetitions on one side, then switch to the other leg.\n",
                 'description_nld' => "De horse kick is een oefening die gericht is op je bilspieren, hamstrings en kernspieren. Hier is een korte en heldere uitleg over hoe je een horse kick uitvoert:\n\nGa op handen en knieën op een fitnessmat of zachte ondergrond zitten.\nPlaats je handen recht onder je schouders en je knieën recht onder je heupen.\nStrek één been recht naar achteren, houd het parallel aan de grond.\nSpan je bilspieren en kernspieren aan voor stabiliteit.\nVanuit deze positie trap je het gestrekte been zijwaarts uit, houd het recht en in lijn met je lichaam.\nBreng het been terug naar de startpositie, zonder de grond te raken.\nHerhaal de trapbeweging voor het gewenste aantal herhalingen aan één kant, en wissel vervolgens naar het andere been.\n"
             ],
             [
                 'name' => 'Mountain climber',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHPAjy36or3gO6q4d6MgVmncA-gpy8z0P7A&usqp=CAU',
+                'img' => '',
                 'description_eng' => "The mountain climber is a dynamic exercise that targets your core, shoulders, and legs. Here is a simple and concise explanation of how to perform a mountain climber:\n\nStart in a high plank position with your hands directly under your shoulders and your body forming a straight line.\nEngage your core muscles by drawing your belly button towards your spine.\nLift your right foot off the ground and drive your right knee towards your chest, while keeping your left leg extended.\nQuickly switch legs by extending your right leg back and bringing your left knee towards your chest.\nContinue alternating the movement, as if you're running in place while in a plank position.\nKeep your hips down and maintain a steady pace throughout the exercise.\nRepeat the movement for the desired number of repetitions or time duration.\n",
                 'description_nld' => "De mountain climber is een dynamische oefening die je kernspieren, schouders en benen traint. Hier is een korte en heldere uitleg over hoe je een mountain climber uitvoert:\n
                 \n
@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Burpee',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHPAjy36or3gO6q4d6MgVmncA-gpy8z0P7A&usqp=CAU',
+                'img' => '',
                 'description_eng' => "The burpee is a full-body exercise that combines strength and cardio. Here is a simple and concise explanation of how to perform a burpee:\n
                 \n
                 Start by standing with your feet shoulder-width apart.\n
@@ -96,7 +96,8 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Lunge',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHPAjy36or3gO6q4d6MgVmncA-gpy8z0P7A&usqp=CAU',
+                'img' => 'https://i0.wp.com/greatist.com/sites/default/files/styles/article-main-x-large-852/public/Lunge.png?itok=rpvmRLtY%201x?w=1155&h=1192
+                ',
                 'description_eng' => "The lunge is a lower body exercise that targets your quadriceps, hamstrings, and glutes. Here is a simple and concise explanation of how to perform a lunge:\n
                 \n
                 Start by standing tall with your feet hip-width apart.\n
@@ -120,7 +121,8 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Wall sit',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHPAjy36or3gO6q4d6MgVmncA-gpy8z0P7A&usqp=CAU',
+                'img' => 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/young-man-doing-the-wall-sit-exercise-outdoors-royalty-free-image-1675863005.jpg
+                ',
                 'description_eng' => "The wall sit is a lower body exercise that primarily targets your quadriceps. Here is a simple and concise explanation of how to perform a wall sit:\n
                 \n
                 Find an empty wall and stand with your back against it.\n
@@ -144,7 +146,8 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Crunch',
-                'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHHPAjy36or3gO6q4d6MgVmncA-gpy8z0P7A&usqp=CAU',
+                'img' => 'https://gethealthyu.com/wp-content/uploads/2014/07/Basic-Crunch_Exercise.jpg
+                ',
                 'description_eng' => "The crunch is an abdominal exercise that targets your rectus abdominis muscles. Here is a simple and concise explanation of how to perform a crunch:\n
                 \n
                 Lie down on your back on an exercise mat with your knees bent and feet flat on the ground, hip-width apart.\n
