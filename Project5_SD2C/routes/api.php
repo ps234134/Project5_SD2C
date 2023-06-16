@@ -7,15 +7,17 @@ use App\Http\Controllers\api_controllers\ApiAchievementController;
 use App\Http\Controllers\api_controllers\ApiUserController;
 
 
-//gets excersises
-Route::get('exercises', [ApiExerciseController::class, 'index']);
-// creates excersises
-Route::post('exercises', [ApiExerciseController::class, 'store']);
+// Route to get both Dutch and English exercises
+//{language} is a parameter that will be passed trough the controller it can only be "Dutch" or "English"
+Route::get('exercises/{language}', [ApiExerciseController::class, 'index']);
+Route::get('exercises/{language}/{id}', [ApiExerciseController::class, 'show']);
 
-// gets achievements
+
+
+// validates and creates achievements
 Route::post('achievements', [ApiAchievementController::class, 'store']);
 
 // gets a specific user
-Route::get('users/{user}', [ApiUserController::class, 'show']);
+Route::get('users/{id}', [ApiUserController::class, 'show']);
 // gets achievement of specific user
-Route::get('users/{user}/achievements', [ApiUserController::class, 'achievements']);
+Route::get('users/{id}/achievements', [ApiUserController::class, 'indexAchievements']);
