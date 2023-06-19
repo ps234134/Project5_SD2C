@@ -51,7 +51,7 @@ class ApiExerciseController extends Controller
      $descriptionColumn = $language === 'dutch' ? 'description_nld' : 'description_eng';
      info('Description Column: ' . $descriptionColumn);
  
-     // Trim the search term to remove any leading or trailing whitespace
+     // Trim the search term to remove any  whitespace before and after the term
      //idk why but if I don't do this it will break! 
      //because there comes a /n after the term in the query!
      $trimmedName = trim($name);

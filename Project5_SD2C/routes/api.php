@@ -17,7 +17,8 @@ Route::get('exercises/{language}/search/{name}', [ApiExerciseController::class, 
 // validates and creates achievements
 Route::post('achievements', [ApiAchievementController::class, 'store']);
 
-// gets a specific user
+Route::post('login', [ApiUserController::class, 'login']);
+Route::post('register', [ApiUserController::class, 'register']);
 Route::get('users/{id}', [ApiUserController::class, 'show']);
-// gets achievement of specific user
 Route::get('users/{id}/achievements', [ApiUserController::class, 'indexAchievements']);
+Route::post('logout', [ApiUserController::class, 'logout']);
