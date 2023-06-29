@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use App\Models\User;
+
 
 class ApiUserController extends Controller
 {
@@ -33,30 +35,22 @@ class ApiUserController extends Controller
             return response()->json(['error' => 'Invalid credentials'], 401);
         }
     }
-
     public function register(Request $request)
-{
-    info('enters getUser function');
-    $validatedData = $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|unique:users',
-        'password' => 'required|string|min:3',
-    ]);
-   
-
-    $validatedData['password'] = bcrypt($request->password);
+    {
+        info('enters getUser function');
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:3',
+        ]);
     
-    $loggedUser = User::create($validatedData);
+        $validatedData['password'] = bcrypt($request->password);
     
-  
-    $token = $loggedUser->createToken('remember_token')->plainTextToken;
-
-    // Update user's token column with the generated token
-    $loggedUser->remember_token = $token;
-    $loggedUser->save();
-
-    return response()->json(['token' => $token], 201);
-}
+        $loggedUser = User::create($validatedData);
+    
+        return response()->json(['message' => 'User registered successfully'], 201);
+    }
+    
 
     public function show($id)
 {
@@ -95,7 +89,8 @@ class ApiUserController extends Controller
     $accessToken = str_replace('Bearer ', '', $accessToken);
 
     // Retrieve the logged-in user based on the access token
-    $user = User::where('token', $accessToken)->first();
+    $user = User::where('remember_token', $accessToken)->first();
+
 
     if (!$user) {
         return response()->json(['message' => 'Unauthorized'], 401);
