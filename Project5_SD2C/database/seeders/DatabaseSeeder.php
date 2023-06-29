@@ -178,7 +178,12 @@ class DatabaseSeeder extends Seeder
                 'name' => $exercise['name'],
                 'img' => $exercise['img'],
                 'description_eng' => $exercise['description_eng'],
-                'description_nld' => $exercise['description_nld'],
+                'description_nld' => $exercise['description_nld']
+            ]);
+
+            $this->call([
+                UsersTableSeeder::class,
+                AchievementSeeder::class
             ]);
         }
     }

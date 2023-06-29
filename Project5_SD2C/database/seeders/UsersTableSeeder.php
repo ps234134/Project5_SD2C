@@ -11,11 +11,7 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        User::create([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('password'),
-        ]);
+
 
         // Generate random users with the same encrypted password
         for ($i = 1; $i <= 10; $i++) {
