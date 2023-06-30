@@ -132,20 +132,7 @@ class _MainDrawerState extends State<MainDrawer> {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: GestureDetector(
-                  onTap: toggleLanguage,
-                  child: isDutchLanguage
-                      ? Image.asset(
-                    'assets/images/dutch_flag.png',
-                    width: 50,
-                    height: 30,
-                  )
-                      : Image.asset(
-                    'assets/images/english_flag.png',
-                    width: 50,
-                    height: 30,
-                  ),
-                ),
+
               ),
             ),
           ),

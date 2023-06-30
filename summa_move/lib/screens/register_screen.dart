@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:summa_move/api/user_api.dart';
 import 'package:summa_move/widgets/main_drawer.dart';
-import 'package:summa_move/screens/register_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  static const routeName = '/login';
+class RegisterScreen extends StatelessWidget {
+  static const routeName = '/register';
 
+  final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -13,14 +13,24 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Register'),
       ),
-      drawer: MainDrawer(),
+      drawer: MainDrawer(), // Add the drawer here
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            TextFormField(
+              style: TextStyle(
+                color: Color(0xFF36257A),
+              ),
+              controller: nameController,
+              decoration: InputDecoration(
+                labelText: 'Name',
+              ),
+            ),
+            SizedBox(height: 16),
             TextFormField(
               style: TextStyle(
                 color: Color(0xFF36257A),
@@ -47,24 +57,10 @@ class LoginScreen extends StatelessWidget {
                 backgroundColor: Color(0xFFD41D84),
               ),
               onPressed: () {
+                String name = nameController.text;
                 String email = emailController.text;
                 String password = passwordController.text;
-                UserAPI.login(context, email, password);
-              },
-              child: Text(
-                'Login',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xFF36257A),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, RegisterScreen.routeName);
+                UserAPI.register(context, name, email, password);
               },
               child: Text(
                 'Register',
