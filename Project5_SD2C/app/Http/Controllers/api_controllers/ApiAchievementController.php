@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api_controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Achievement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ApiAchievementController extends Controller
 {
@@ -13,38 +14,29 @@ class ApiAchievementController extends Controller
      */
     public function index()
     {
-        return Achievement::All();
+        $achievement = Achievement::all();
+        return response()->json($achievement);
     }
 
 
     public function store(Request $request)
     {
-        //THIS IS NOT FINISHED YET NEED DB GET TOKEN FROM REQUEST HEADER
-        // Validate the incoming request data
+        info('enter store');
+        info($request);
+
         $validatedData = $request->validate([
             'name' => 'required|string',
-            'description' => 'required|string',
-            // Add any other validation rules as needed
+            'date' => 'required|date',
+            'starttime' => 'required|string',
+            'endtime' => 'required|string',
+            'amount' => 'required|string',
+            'user_id' => 'required|string',
+
         ]);
 
-        // Create a new achievement
-        $achievement = $this->create($validatedData);
-
+        $achievement = Achievement::create($validatedData);
         return response()->json($achievement, 201);
     }
-
-
-    private function create(array $data)
-    {
-        Log::emergency('Prestatie aangemaakt');
-        $achievement = Achievement::create($request->all());
-
-        return response()->json([
-            'message' => 'Prestatie succesvol aangemaakt',
-            'achievement' => $achievement
-        ]);
-    }
-
 
     /**
      * Display the specified resource.
@@ -57,26 +49,18 @@ class ApiAchievementController extends Controller
 
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        $achievement = Achievement::where('id', $id);
-        $achievement->update($request->all());
-
-        return response()->json([
-            'message' => 'Prestatie succesvol geupdate',
-            'achievement' => $achievement
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
         ]);
+
+        $achievement = Achievement::findOrFail($id);
+        $achievement->update($validatedData);
+        return response()->json($achievement);
     }
 
 
@@ -85,12 +69,27 @@ class ApiAchievementController extends Controller
      */
     public function destroy(string $id)
     {
-        $achievement = Achievement::where('id', $id);
+        $achievement = Achievement::findOrFail($id);
         $achievement->delete();
+        return response()->json(null, 204);
+    }
 
-        return response()->json([
-            'message' => 'Prestatie verwijderd'
-        ]);
+
+
+    public function searchAchievement($name)
+    {
+    //    info('Search Term: ' . $name);
+
+    //    $trimmedName = trim($name);
+
+        // Perform  query based on the trimmed search term
+        $query = Achievement::where('name'/*, $trimmedName*/)
+            ->select('name');
+
+        $achievement = $query->get();
+
+    //    info('Fetched achievements:', $achievement->toArray());
+
+        return response()->json($achievement);
     }
 }
-
